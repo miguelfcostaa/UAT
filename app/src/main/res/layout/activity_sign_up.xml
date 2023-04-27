@@ -30,9 +30,10 @@
         android:contentDescription="red block"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.17" />
+        app:layout_constraintVertical_bias="0.147" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -55,7 +56,6 @@
         android:src="@android:drawable/radiobutton_off_background"
         android:tint="#FFFFFF"
         android:tintMode="src_in"
-        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,33 +109,36 @@
         app:layout_constraintVertical_bias="0.625" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/CreateEmail"
         android:layout_width="321dp"
         android:layout_height="53dp"
         android:ems="10"
-        android:hint="Email"
+        android:hint="@string/CreateEmail"
         android:inputType="textEmailAddress"
         android:textAlignment="textStart"
         app:layout_constraintBottom_toTopOf="@+id/CreateAccountButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintVertical_bias="0.389" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/CreatePassword"
         android:layout_width="321dp"
         android:layout_height="50dp"
         android:ems="10"
-        android:hint="password"
+        android:hint="@string/CreatePassword"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword3"
+        app:layout_constraintBottom_toTopOf="@+id/ConfirmPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/CreateEmail"
+        app:layout_constraintVertical_bias="0.442" />
 
     <EditText
-        android:id="@+id/editTextTextPassword3"
+        android:id="@+id/ConfirmPassword"
         android:layout_width="323dp"
         android:layout_height="54dp"
         android:ems="10"
@@ -143,22 +146,24 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/CreateAccountButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.528"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintVertical_bias="0.893" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/CreateUsername"
         android:layout_width="318dp"
-        android:layout_height="46dp"
+        android:layout_height="52dp"
         android:ems="10"
-        android:hint="Username"
+        android:hint="@string/CreateUsername"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress2"
+        app:layout_constraintBottom_toTopOf="@+id/CreateEmail"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.568" />
 
     <TextView
         android:id="@+id/textView8"
@@ -174,13 +179,14 @@
         app:layout_constraintVertical_bias="0.407" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/SIgnInFromSignUpButton"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="76dp"
         android:layout_height="26dp"
         android:text="Sign in"
         android:textColor="#000000"
         android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.717"
