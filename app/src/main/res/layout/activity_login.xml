@@ -6,6 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <Button
+        android:id="@+id/signInFromSignUpButton"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="89dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="28dp"
+        android:onClick="goToSignIn"
+        android:text="Sign up"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.734"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreateAccountButton"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="195dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="24dp"
+        android:text="You don't have an account?"
+        android:textColor="#D23B3B3B"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.274"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CreateAccountButton"
+        app:layout_constraintVertical_bias="0.407" />
+
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="603dp"
@@ -68,7 +101,7 @@
         android:ems="10"
         android:hint="password"
         android:inputType="textPassword"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="#000000"
         android:typeface="normal"
         app:layout_constraintBottom_toBottomOf="parent"

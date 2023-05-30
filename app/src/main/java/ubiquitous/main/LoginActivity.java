@@ -1,5 +1,8 @@
 package ubiquitous.main;
 
+import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -30,24 +33,39 @@ public class LoginActivity extends AppCompatActivity {
         LoginPassword = findViewById(R.id.LoginPassword);
         RememberMeCheckBox = findViewById(R.id.RememberMeCheckBox);
 
-        SignInButton.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                /*
-                 CustomerModel customer_model;
-                 try {
-                     customer_model = new CustomerModel(-1,LoginUsername.getText().toString(),LoginPassword.getText().toString(),RememberMeCheckBox.isChecked());
-                     Toast.makeText(LoginActivity.this, customer_model.toString(),Toast.LENGTH_SHORT).show();
-                 }
-                 catch (Exception e){
-                     Toast.makeText(LoginActivity.this, "ERROR SAVING USER",Toast.LENGTH_SHORT).show();
-                     customer_model = new CustomerModel(-1,"error","0",false);
-                 }
+        Database database = new Database(LoginActivity.this);
 
-                 Database database = new Database(LoginActivity.this);
-                 boolean success = database.addOne(customer_model);
-                 Toast.makeText(LoginActivity.this, "SUCCESS", Toast.LENGTH_SHORT).show();*/
-             }
+        SignInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String usernameLogin = LoginUsername.getText().toString();
+                String passwordLogin = LoginPassword.getText().toString();
+
+                SQLiteDatabase db = database.getReadableDatabase();
+
+                String tableName = "CUSTOMER_TABLE";
+                String[] columns = {"CUSTOMER_USERNAME", "CUSTOMER_PASSWORD"};
+
+                // Define the WHERE clause
+                String selection = "CUSTOMER_USERNAME = ? AND CUSTOMER_PASSWORD = ?";
+                String[] selectionArgs = {usernameLogin, passwordLogin};
+
+                // Perform the query
+                Cursor cursor = db.query(tableName, columns, selection, selectionArgs, null, null, null);
+
+                // Check if a matching record was found
+                if (cursor.moveToFirst()) {
+                    Toast.makeText(LoginActivity.this, "LOGIN WAS SUCCESSFUL", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this, PrincipalMenuActivity.class);
+                    startActivity(intent);
+
+                } else {
+                    Toast.makeText(LoginActivity.this, "Invalid password.", Toast.LENGTH_SHORT).show();
+                }
+
+                cursor.close();
+                db.close();
+            }
         });
     }
 }
