@@ -1,20 +1,22 @@
 package ubiquitous.main;
 
-public class Client_Model {
+public class CustomerModel {
 
     private int id;
     private String username;
+    private String email;
     private String password;
-    private boolean rememberMe;
+    private String ConfirmPassword;
 
-    public Client_Model(int id, String username, String password, boolean rememberMe) {
+    public CustomerModel(int id, String username, String email, String password, String confirmPassword) {
         this.id = id;
         this.username = username;
+        this.email = email;
         this.password = password;
-        this.rememberMe = rememberMe;
+        ConfirmPassword = confirmPassword;
     }
 
-    public Client_Model() {
+    public CustomerModel() {
     }
 
     public int getId() {
@@ -33,6 +35,14 @@ public class Client_Model {
         this.username = username;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -41,21 +51,22 @@ public class Client_Model {
         this.password = password;
     }
 
-    public boolean isRememberMe() {
-        return rememberMe;
+    public String getConfirmPassword() {
+        return ConfirmPassword;
     }
 
-    public void setRememberMe(boolean rememberMe) {
-        this.rememberMe = rememberMe;
+    public void setConfirmPassword(String confirmPassword) {
+        ConfirmPassword = confirmPassword;
     }
 
     @Override
     public String toString() {
-        return "Client_Model{" +
+        return "CustomerModel{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", rememberMe=" + rememberMe +
+                ", ConfirmPassword='" + ConfirmPassword + '\'' +
                 '}';
     }
 }

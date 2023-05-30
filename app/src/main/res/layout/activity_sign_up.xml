@@ -17,10 +17,10 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.87" />
+        app:layout_constraintVertical_bias="0.868" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -179,19 +179,20 @@
         app:layout_constraintVertical_bias="0.407" />
 
     <Button
-        android:id="@+id/SIgnInFromSignUpButton"
+        android:id="@+id/SignInFromSignUpButton"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-        android:layout_width="76dp"
-        android:layout_height="26dp"
+        android:layout_width="86dp"
+        android:layout_height="29dp"
+        android:onClick="goToSignIn"
         android:text="Sign in"
         android:textColor="#000000"
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.717"
+        app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CreateAccountButton"
-        app:layout_constraintVertical_bias="0.304" />
+        app:layout_constraintVertical_bias="0.25" />
 
 </android.support.constraint.ConstraintLayout>

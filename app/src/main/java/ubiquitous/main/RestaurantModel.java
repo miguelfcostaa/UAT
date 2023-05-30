@@ -1,6 +1,6 @@
 package ubiquitous.main;
 
-public class Restaurant_Model {
+public class RestaurantModel {
 
     private int id;
     private String name;
@@ -8,7 +8,7 @@ public class Restaurant_Model {
     private int phoneNumber;
     private long rating;
 
-    public Restaurant_Model(int id, String name, String location, int phoneNumber, long rating) {
+    public RestaurantModel(int id, String name, String location, int phoneNumber, long rating) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -16,7 +16,7 @@ public class Restaurant_Model {
         this.rating = rating;
     }
 
-    public Restaurant_Model() {
+    public RestaurantModel() {
     }
 
     public int getId() {
