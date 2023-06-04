@@ -5,12 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database extends SQLiteOpenHelper {
+public class DatabaseCustomer extends SQLiteOpenHelper {
 
 
     public static final String CUSTOMER_TABLE = "CUSTOMER_TABLE";
@@ -20,7 +20,7 @@ public class Database extends SQLiteOpenHelper {
     public static final String COLUMN_CUSTOMER_CONFIRM_PASSWORD = "CUSTOMER_CONFIRM_PASSWORD";
 
 
-    public Database(@Nullable Context context) {
+    public DatabaseCustomer(@Nullable Context context) {
         super(context, "customer.db", null, 1);
     }
 
@@ -53,6 +53,41 @@ public class Database extends SQLiteOpenHelper {
             return true;
         }
     }
+
+    public CustomerModel getLoggedInCustomer() {
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.query(
+                CUSTOMER_TABLE,
+                new String[]{COLUMN_CUSTOMER_USERNAME, COLUMN_CUSTOMER_EMAIL},
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        CustomerModel loggedInCustomer = null;
+
+        if (cursor.moveToFirst()) {
+            int usernameColumnIndex = cursor.getColumnIndex(COLUMN_CUSTOMER_USERNAME);
+            int emailColumnIndex = cursor.getColumnIndex(COLUMN_CUSTOMER_EMAIL);
+
+            if (usernameColumnIndex != -1 && emailColumnIndex != -1) {
+                String username = cursor.getString(usernameColumnIndex);
+                String email = cursor.getString(emailColumnIndex);
+
+                loggedInCustomer = new CustomerModel(-1, username, email, "", "");
+            }
+        }
+
+        cursor.close();
+        db.close();
+
+        return loggedInCustomer;
+    }
+
+
 
     public List<CustomerModel> getEveryone() {
         List<CustomerModel> everyoneList = new ArrayList<>();

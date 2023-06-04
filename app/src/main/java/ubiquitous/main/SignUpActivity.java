@@ -1,7 +1,6 @@
 package ubiquitous.main;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -9,6 +8,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SignUpActivity extends AppCompatActivity {
 
@@ -47,11 +48,13 @@ public class SignUpActivity extends AppCompatActivity {
                     customer_model = new CustomerModel(-1,"error","error@mail.com","-","-");
                 }
 
-                Database database = new Database(SignUpActivity.this);
-                boolean success = database.addOne(customer_model);
+                DatabaseCustomer databaseCustomer = new DatabaseCustomer(SignUpActivity.this);
+                boolean success = databaseCustomer.addOne(customer_model);
                 Toast.makeText(SignUpActivity.this, "SUCCESS", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
     }
 

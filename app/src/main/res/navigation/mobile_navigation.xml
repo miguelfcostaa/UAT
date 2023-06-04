@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="ubiquitous.main.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+
+    <fragment
+        android:id="@+id/nav_favorite"
+        android:name="ubiquitous.main.ui.favorite.FavoriteFragment"
+        android:label="@string/menu_favorite"
+        tools:layout="@layout/fragment_favorite" />
+
+    <fragment
+        android:id="@+id/nav_bookmark"
+        android:name="ubiquitous.main.ui.bookmark.BookmarkFragment"
+        android:label="@string/menu_bookmarked"
+        tools:layout="@layout/fragment_bookmark" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="ubiquitous.main.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_add_to_menu"
+        android:name="ubiquitous.main.ui.addToMenu.addToMenuFragment"
+        android:label="@string/add_to_menu"
+        tools:layout="@layout/fragment_add_to_menu" />
+
+</navigation>

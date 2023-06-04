@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -39,7 +39,6 @@
         android:id="@+id/imageView11"
         android:layout_width="127dp"
         android:layout_height="64dp"
-        android:tint="#FFFFFF"
         android:tintMode="src_in"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +53,6 @@
         android:layout_height="128dp"
         android:clickable="false"
         android:src="@android:drawable/radiobutton_off_background"
-        android:tint="#FFFFFF"
         android:tintMode="src_in"
         app:layout_constraintBottom_toBottomOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
@@ -195,4 +193,4 @@
         app:layout_constraintTop_toBottomOf="@+id/CreateAccountButton"
         app:layout_constraintVertical_bias="0.25" />
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

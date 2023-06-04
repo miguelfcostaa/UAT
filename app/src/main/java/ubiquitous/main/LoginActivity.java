@@ -3,7 +3,6 @@ package ubiquitous.main;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -12,6 +11,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         LoginPassword = findViewById(R.id.LoginPassword);
         RememberMeCheckBox = findViewById(R.id.RememberMeCheckBox);
 
-        Database database = new Database(LoginActivity.this);
+        DatabaseCustomer databaseCustomer = new DatabaseCustomer(LoginActivity.this);
 
         SignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 String usernameLogin = LoginUsername.getText().toString();
                 String passwordLogin = LoginPassword.getText().toString();
 
-                SQLiteDatabase db = database.getReadableDatabase();
+                SQLiteDatabase db = databaseCustomer.getReadableDatabase();
 
                 String tableName = "CUSTOMER_TABLE";
                 String[] columns = {"CUSTOMER_USERNAME", "CUSTOMER_PASSWORD"};
@@ -56,8 +57,10 @@ public class LoginActivity extends AppCompatActivity {
                 // Check if a matching record was found
                 if (cursor.moveToFirst()) {
                     Toast.makeText(LoginActivity.this, "LOGIN WAS SUCCESSFUL", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginActivity.this, PrincipalMenuActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                    finish();
 
                 } else {
                     Toast.makeText(LoginActivity.this, "Invalid password.", Toast.LENGTH_SHORT).show();
@@ -68,4 +71,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

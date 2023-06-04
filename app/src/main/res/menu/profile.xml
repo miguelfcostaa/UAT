@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+        <group
+            android:id="@+id/group_food_filters"
+            android:checkableBehavior="all"
+            android:menuCategory="secondary"
+            android:title="@string/menu_food_filters">
+
+            <item
+                android:id="@+id/filter_wheat"
+                android:title="@string/filter_wheat" />
+            <item
+                android:id="@+id/filter_fish"
+                android:title="@string/filter_fish" />
+            <item
+                android:id="@+id/filter_seafood"
+                android:title="@string/filter_seafood" />
+        </group>
+</menu>

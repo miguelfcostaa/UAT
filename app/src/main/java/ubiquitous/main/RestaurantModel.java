@@ -5,10 +5,10 @@ public class RestaurantModel {
     private int id;
     private String name;
     private String location;
-    private int phoneNumber;
-    private long rating;
+    private String phoneNumber;
+    private String rating;
 
-    public RestaurantModel(int id, String name, String location, int phoneNumber, long rating) {
+    public RestaurantModel(int id, String name, String location, String phoneNumber, String rating) {
         this.id = id;
         this.name = name;
         this.location = location;
@@ -43,30 +43,30 @@ public class RestaurantModel {
         this.location = location;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public long getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(long rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 
     @Override
     public String toString() {
-        return "Restaurant_Model{" +
+        return "RestaurantModel{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", location='" + location + '\'' +
-                ", phoneNumber=" + phoneNumber +
-                ", rating=" + rating +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", rating='" + rating + '\'' +
                 '}';
     }
 }
